@@ -4,8 +4,6 @@ node_js:
 sudo: false
 env:
   - NODE_ENV='test'
-script:
-  - yarn
 
 matrix:
   include:
@@ -14,7 +12,6 @@ matrix:
       osx_image: xcode9.2
       before_install:
         - nvm install 7
-        - node --version
         - node --version
         - travis_retry npm install -g yarn
         - yarn -version
