@@ -16,6 +16,11 @@ matrix:
       install:
         - brew tap wix/brew
         - brew install applesimutils
-        - travis_retry gem install xcpretty
-      script:
-        - cd bin
+        - npm install -g detox-cli
+        - npm install -g react-native-cli
+        - npm i
+      script:      
+        - react-native start --port 2137 &
+        - detox build -c ios.sim.debug 
+        - detox test -c ios.sim.debug
+        - kill -9 $(lsof -n -i4TCP:2137)        
