@@ -17,6 +17,7 @@ matrix:
         - brew tap wix/brew
         - brew install applesimutils
         - npm install -g detox-cli
+        - npm install -g react-native-cli
         - npm install -g exp
         - npm i
       script:      
