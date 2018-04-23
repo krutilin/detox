@@ -1,4 +1,23 @@
-const { reloadApp } = require("detox-expo-helpers");
+const { UrlUtils } = require("xdl");
+//const { reloadApp } = require("detox-expo-helpers");
+
+let url;
+const getAppUrl = async () => {
+  if (!url) {
+    url = await UrlUtils.constructManifestUrlAsync(process.cwd());
+  }
+
+  return url;
+};
+
+const reloadApp = async () => {
+  let url = await getAppUrl();
+  await device.relaunchApp({
+    url,
+    sourceApp: "host.exp.Exponent",
+    launchArgs: { EXKernelDisableNuxDefaultsKey: true }
+  });
+};
 
 describe("Example", () => {
   function timeout(ms) {
