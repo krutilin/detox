@@ -17,6 +17,5 @@ matrix:
         - brew tap wix/brew
         - brew install applesimutils
         - travis_retry gem install xcpretty
-        - travis_retry yarn
       script:
         - cd bin
