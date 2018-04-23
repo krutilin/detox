@@ -17,10 +17,8 @@ matrix:
         - brew tap wix/brew
         - brew install applesimutils
         - npm install -g detox-cli
-        - npm install -g react-native-cli
+        - npm install -g exp
         - npm i
       script:      
-        - react-native start --port 2137 &
-        - detox build -c ios.sim.debug 
-        - detox test -c ios.sim.debug
-        - kill -9 $(lsof -n -i4TCP:2137)        
+        - exp start &
+        - npm run e2e
