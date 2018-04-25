@@ -24,10 +24,12 @@ describe("Example", () => {
   }
   beforeEach(async () => {
     //await reloadApp();
+    console.log("before Started!!!!");
     await device.relaunchApp({
       url: "https://exp.host/@y.krutilin/with-detox-tests",
       launchArgs: { EXKernelDisableNuxDefaultsKey: true }
     });
+    console.log("Started!!!!");
     await timeout(60000);
   });
 
