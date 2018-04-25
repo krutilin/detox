@@ -7,12 +7,7 @@ function timeout(ms) {
 }
 
 before(async () => {
-  console.log("before 1m wait");
-  await timeout(60000);
-  console.log("before detox.init");
   await detox.init(config);
-  console.log("detox.init done wait a minute");
-  await timeout(60000);
 });
 
 after(async () => {
