@@ -1,35 +1,11 @@
-const { UrlUtils } = require("xdl");
-//const { reloadApp } = require("detox-expo-helpers");
-
-let url;
-const getAppUrl = async () => {
-  if (!url) {
-    url = await UrlUtils.constructManifestUrlAsync(process.cwd());
-  }
-
-  return url;
-};
-
-const reloadApp = async () => {
-  let url = await getAppUrl();
-  await device.relaunchApp({
-    url: "https://exp.host/@y.krutilin/with-detox-tests",
-    launchArgs: { EXKernelDisableNuxDefaultsKey: true }
-  });
-};
+const { reloadApp } = require("detox-expo-helpers");
 
 describe("Example", () => {
   function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
   beforeEach(async () => {
-    //await reloadApp();
-    console.log("before Started!!!!");
-    await device.relaunchApp({
-      url: "https://exp.host/@y.krutilin/with-detox-tests",
-      launchArgs: { EXKernelDisableNuxDefaultsKey: true }
-    });
-    console.log("Started!!!!");
+    await reloadApp();
     await timeout(60000);
   });
 
