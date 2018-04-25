@@ -21,5 +21,4 @@ matrix:
         - npm install -g exp
         - npm i
       script:      
-        - exp start --offline &
         - npm run e2e

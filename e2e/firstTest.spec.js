@@ -23,7 +23,10 @@ describe("Example", () => {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
   beforeEach(async () => {
-    await reloadApp();
+    //await reloadApp();
+    await device.relaunchApp({
+      url: "https://exp.host/@y.krutilin/with-detox-tests"
+    });
     await timeout(60000);
   });
 
