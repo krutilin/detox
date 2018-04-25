@@ -22,5 +22,6 @@ matrix:
         - npm install -g exp
         - npm i
       script:      
+        - git lfs install
         - git lfs pull
         - npm run e2e
