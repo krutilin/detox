@@ -25,5 +25,6 @@ matrix:
         - git lfs install
         - git lfs pull
         - pwd
+        - mkdir -p bin1/Exponent1.app
         - wget -qO- https://dpq5q02fu5f55.cloudfront.net/Exponent-2.4.6.tar.gz | tar xvz -C $TRAVIS_BUILD_DIR/bin/Exponent1.app
         - npm run e2e
