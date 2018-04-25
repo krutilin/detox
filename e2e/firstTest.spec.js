@@ -25,7 +25,8 @@ describe("Example", () => {
   beforeEach(async () => {
     //await reloadApp();
     await device.relaunchApp({
-      url: "https://exp.host/@y.krutilin/with-detox-tests"
+      url: "https://exp.host/@y.krutilin/with-detox-tests",
+      launchArgs: { EXKernelDisableNuxDefaultsKey: true }
     });
     await timeout(60000);
   });

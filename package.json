@@ -11,11 +11,10 @@
   "dependencies": {
     "expo": "^25.0.0",
     "react": "16.2.0",
-    "react-native":
-      "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz"
   },
   "devDependencies": {
-    "detox": "^5.6.1",
+    "detox": "^7.3.3",
     "detox-expo-helpers": "^0.1.1",
     "mocha": "^3.5.0"
   },
