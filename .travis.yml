@@ -16,9 +16,11 @@ matrix:
       install:
         - brew tap wix/brew
         - brew install applesimutils
+        - brew install git-lfs
         - npm install -g detox-cli
         - npm install -g react-native-cli
         - npm install -g exp
         - npm i
       script:      
+        - git lfs pull
         - npm run e2e
