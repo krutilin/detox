@@ -13,7 +13,7 @@ const getAppUrl = async () => {
 const reloadApp = async () => {
   let url = await getAppUrl();
   await device.relaunchApp({
-    url: "exp://localhost:19000",
+    url: "https://exp.host/@y.krutilin/with-detox-tests",
     sourceApp: "host.exp.Exponent",
     launchArgs: { EXKernelDisableNuxDefaultsKey: true }
   });
