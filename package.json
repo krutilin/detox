@@ -21,7 +21,7 @@
   "detox": {
     "configurations": {
       "ios.sim": {
-        "binaryPath": "bin1/Exponent1.app",
+        "binaryPath": "bin/Exponent.app",
         "type": "ios.simulator",
         "name": "iPhone 7 Plus"
       }
