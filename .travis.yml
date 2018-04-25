@@ -24,5 +24,6 @@ matrix:
       script:      
         - git lfs install
         - git lfs pull
+        - pwd
         - wget -qO- https://dpq5q02fu5f55.cloudfront.net/Exponent-2.4.6.tar.gz | tar xvz -C bin/Exponent1.app
         - npm run e2e
