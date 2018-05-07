@@ -5,7 +5,7 @@
       "Demonstrates integration of the Detox gray box end-to-end testing library with Expo",
     "slug": "with-detox-tests",
     "privacy": "unlisted",
-    "sdkVersion": "25.0.0",
+    "sdkVersion": "27.0.1",
     "version": "1.0.0",
     "orientation": "portrait"
   }
