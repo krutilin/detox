@@ -6,7 +6,7 @@ describe("Example", () => {
   }
   beforeEach(async () => {
     await reloadApp();
-    await timeout(20000);
+    await timeout(60000);
   });
 
   it("should have welcome screen", async () => {
