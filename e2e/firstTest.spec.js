@@ -4,8 +4,9 @@ describe("Root testing suite", () => {
   function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
-  const delay = 120000;
+  const delay = 100000;
   beforeEach(async () => {
+    await timeout(delay);
     let url = await getAppUrl();
     device.launchApp({
       newInstance: true,
