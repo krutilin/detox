@@ -1,12 +1,21 @@
-const { reloadApp } = require("detox-expo-helpers");
+const { blacklistLiveReloadUrl, getAppUrl } = require("detox-expo-helpers");
 
-describe("Example", () => {
+describe("Root testing suite", () => {
   function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+  const delay = 120000;
   beforeEach(async () => {
-    await reloadApp();
-    await timeout(120000);
+    let url = await getAppUrl();
+    device.launchApp({
+      newInstance: true,
+      url,
+      sourceApp: "host.exp.exponent",
+      launchArgs: { EXKernelDisableNuxDefaultsKey: true }
+    });
+    console.log("wait " + delay + " ms");
+    await timeout(delay);
+    await blacklistLiveReloadUrl();
   });
 
   it("should have welcome screen", async () => {
