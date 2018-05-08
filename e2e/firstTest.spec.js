@@ -10,6 +10,7 @@ describe("Root testing suite", () => {
     await timeout(delay);
 
     let url = await getAppUrl();
+    console.log(url);
     console.log("device.launchApp");
     device.launchApp({
       newInstance: true,

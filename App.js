@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { Component } from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default class App extends Component {
   state = {
-    greeting: undefined,
+    greeting: undefined
   };
 
   render() {
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     if (this.state.greeting) return this.renderAfterButton();
     return (
       <View
@@ -14,19 +15,22 @@ export default class App extends Component {
         style={{
           flex: 1,
           paddingTop: 20,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
         <Text style={{ fontSize: 25, marginBottom: 30 }}>Welcome</Text>
         <TouchableOpacity
           testID="hello_button"
-          onPress={this.onButtonPress.bind(this, 'Hello')}>
-          <Text style={{ color: 'blue', marginBottom: 20 }}>Say Hello</Text>
+          onPress={this.onButtonPress.bind(this, "Hello")}
+        >
+          <Text style={{ color: "blue", marginBottom: 20 }}>Say Hello</Text>
         </TouchableOpacity>
         <TouchableOpacity
           testID="world_button"
-          onPress={this.onButtonPress.bind(this, 'World')}>
-          <Text style={{ color: 'blue', marginBottom: 20 }}>Say World</Text>
+          onPress={this.onButtonPress.bind(this, "World")}
+        >
+          <Text style={{ color: "blue", marginBottom: 20 }}>Say World</Text>
         </TouchableOpacity>
       </View>
     );
@@ -37,9 +41,10 @@ export default class App extends Component {
         style={{
           flex: 1,
           paddingTop: 20,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
         <Text style={{ fontSize: 25 }}>{this.state.greeting}!!!</Text>
       </View>
     );
@@ -47,7 +52,7 @@ export default class App extends Component {
 
   onButtonPress(greeting) {
     this.setState({
-      greeting: greeting,
+      greeting: greeting
     });
   }
 }
@@ -55,8 +60,8 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  }
 });
