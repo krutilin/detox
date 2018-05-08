@@ -6,8 +6,11 @@ describe("Root testing suite", () => {
   }
   const delay = 100000;
   beforeEach(async () => {
-    await timeout(delay);
+    console.log("timeout 1, wait for exp start");
+    await timeout(120000);
+
     let url = await getAppUrl();
+    console.log("device.launchApp");
     device.launchApp({
       newInstance: true,
       url,
