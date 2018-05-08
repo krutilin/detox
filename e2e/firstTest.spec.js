@@ -1,28 +1,13 @@
-const { blacklistLiveReloadUrl, getAppUrl } = require("detox-expo-helpers");
+const { reloadApp } = require("detox-expo-helpers");
 
 describe("Root testing suite", () => {
   function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
-  const delay = 120000;
-  beforeEach(async () => {
-    console.log("timeout, wait for exp start");
-    await timeout(delay);
 
-    let url = await getAppUrl();
-    console.log(url);
-    console.log("device.launchApp");
-    device.launchApp({
-      newInstance: true,
-      url,
-      sourceApp: "host.exp.exponent",
-      launchArgs: { EXKernelDisableNuxDefaultsKey: true }
-    });
-    console.log("wait " + delay + " ms");
-    await timeout(delay);
-    await blacklistLiveReloadUrl();
-    console.log("blacklistLiveReloadUrl()");
-    await timeout(1000);
+  beforeEach(async () => {
+    await reloadApp();
+    await timeout(20000);
   });
 
   it("should have welcome screen", async () => {
