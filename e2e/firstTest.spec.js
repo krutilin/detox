@@ -4,10 +4,10 @@ describe("Root testing suite", () => {
   function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
-  const delay = 100000;
+  const delay = 120000;
   beforeEach(async () => {
-    console.log("timeout 1, wait for exp start");
-    await timeout(120000);
+    console.log("timeout, wait for exp start");
+    await timeout(delay);
 
     let url = await getAppUrl();
     console.log("device.launchApp");
@@ -20,6 +20,8 @@ describe("Root testing suite", () => {
     console.log("wait " + delay + " ms");
     await timeout(delay);
     await blacklistLiveReloadUrl();
+    console.log("blacklistLiveReloadUrl()");
+    await timeout(1000);
   });
 
   it("should have welcome screen", async () => {
